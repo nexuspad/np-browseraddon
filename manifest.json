@@ -1,0 +1,27 @@
+{
+  "name": "NexusPad Bookmark",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A browser add-on that helps saving your bookmark and web clipping to NexusPad in one click.",
+  "icons": {
+    "32": "images/icon.png"
+  },
+  "permissions": [
+    "cookies",
+    "tabs",
+    "activeTab",
+    "contextMenus",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "web_accessible_resources": [
+  ],
+  "browser_action": {
+    "default_title": "Add Bookmark",
+    "default_icon": "images/icon.png",
+    "default_popup": "landing.html"
+  },
+  "background": {
+    "scripts": ["fingerprint2.min.js", "common.js"]
+  }
+}

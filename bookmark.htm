@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/all.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	<script src="fingerprint2.min.js"></script>
+	<script src="folder.js"></script>
+	<script src="bookmark.js"></script>
+	<script src="common.js"></script>
+</head>
+
+<body id="BookmarkPage">
+	<nav class="navbar navbar-light bg-light justify-content-between">
+		<span class="navbar-brand"><img src="images/logo.png" /></span>
+		<span class="navbar-nav ml-auto" id="UserDisplayName"></span>
+	</nav>
+	<div id="Main" class="panel panel-default center-block landing-wrap">
+		<div class="form-group">
+			<div id="ErrorMessage" class="alert alert-danger hidden"></div>
+			<div id="InfoMessage" class="alert alert-info hidden"></div>
+
+			<div class="dropdown">
+				<button class="btn btn-secondary dropdown-toggle" type="button" id="MyBookmarkFolders" data-toggle="dropdown">
+					ROOT FOLDER
+				</button>
+				<div class="dropdown-menu" id="SelectFolderDropdown">
+					loading...
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<input type="text" class="form-control" id="Url" value="" placeholder="web address" maxlength="500" />
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" id="Title" value="" placeholder="title" maxlength="500" />
+		</div>
+		<div class="form-group">
+			<textarea id="Notes" class="form-control" rows="5" placeholder="notes"></textarea>
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" id="Tags" value="" maxlength="80" placeholder="tags" />
+		</div>
+		<div class="form-group text-center">
+			<button class="btn btn-primary" type="button" id="SaveBookmark">save</button>
+		</div>
+	</div>
+	<div class="text-center mb-2">
+		<a id="OpenMyBookmarks" href="javascript:;">my bookmarks</a>
+		&nbsp;&nbsp;
+		<a id="Signout" href="javascript:;">log out</a>
+	</div>
+
+</body>
+
+</html>
