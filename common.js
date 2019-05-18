@@ -53,12 +53,15 @@ function getUuid(callBackFunc) {
 		return;
 	}
 	options = {
-		excludes: { userAgent: true, language: true, canvas: true, webgl: true, adBlock: true, audio: true, enumerateDevices: true }
+		excludes: { userAgent: true, language: true, canvas: true, webgl: true,
+			adBlock: true, audio: true, enumerateDevices: true, plugins: true, fonts: true }
 	}
+
+	let clientType = 'browser';
 	if (window.requestIdleCallback) {
 		requestIdleCallback(function () {
 			Fingerprint2.get(options, function (components) {
-				uuid = Fingerprint2.x64hash128(components.map((c) => c.value).join(''), 31);
+				uuid = clientType + '_' + Fingerprint2.x64hash128(components.map((c) => c.value).join(''), 31);
 				if (callBackFunc)
 					callBackFunc(uuid);
 			});
@@ -66,7 +69,7 @@ function getUuid(callBackFunc) {
 	} else {
 		setTimeout(function () {
 			Fingerprint2.get(options, function (components) {
-				uuid = Fingerprint2.x64hash128(components.map((c) => c.value).join(''), 31);
+				uuid = clientType + '_' + Fingerprint2.x64hash128(components.map((c) => c.value).join(''), 31);
 				if (callBackFunc)
 					callBackFunc(uuid);
 			});
