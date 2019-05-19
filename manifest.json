@@ -4,7 +4,8 @@
   "manifest_version": 2,
   "description": "A browser add-on that helps saving your bookmark and web clipping to NexusPad in one click.",
   "icons": {
-    "32": "images/icon.png"
+    "32": "images/icon.png",
+    "128": "images/icon128.png"
   },
   "permissions": [
     "cookies",
